@@ -1,0 +1,24 @@
+﻿@model Kitaplik.Entities.Kitap
+
+<h2>Yeni Kitap Ekle</h2>
+
+<form asp-action="Add" method="post">
+   
+    <div class="form-group">
+        <label for="Ad">Kitap Adı</label>
+        <input type="text" class="form-control" id="Ad" name="Ad" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Yazar">Yazar</label>
+        <input type="text" class="form-control" id="Yazar" name="Yazar" required />
+    </div>
+
+    <div class="form-group">
+        <label for="SayfaSayisi">Sayfa Sayısı</label>
+        <input type="number" class="form-control" id="SayfaSayisi" name="SayfaSayisi" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kitap Ekle</button>
+
+</form>

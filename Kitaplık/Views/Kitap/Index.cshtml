@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Kitaplik.Entities.Kitap>
+
+<h2>Kitap Listesi</h2>
+
+<a href="/Kitap/Add" class="btn btn-primary">Yeni Kitap Ekle</a>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>Yazar</th>
+            <th>Sayfa Sayısı</th>
+            <th>Kitap Düzenle</th>
+            <th>Kitap Sil</th>
+
+
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kitap in Model)
+        {
+            <tr>
+                <td>@kitap.Id</td>
+                <td>@kitap.Ad</td>
+                <td>@kitap.Yazar</td>
+                <td>@kitap.SayfaSayisi</td>
+                <td>
+                    <a asp-action="Guncelle" asp-route-id="@kitap.Id" class="btn btn-warning">Düzenle</a>
+                </td>
+                <td>
+                    <form asp-action="Delete" asp-controller="Kitap" method="post">
+                        <input type="hidden" name="id" value="@kitap.Id" />
+                        <button type="submit" class="btn btn-danger">Sil</button>
+                    </form>
+                </td>
+
+            </tr>
+            
+        }
+    </tbody>
+</table>
